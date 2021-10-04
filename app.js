@@ -1,8 +1,17 @@
-// import functions and grab DOM elements
+const result = document.getElementById('result');
+const button = document.getElementById('guess');
+const number = document.getElementById('number');
 
-// initialize global state
+let randomNum = (1 * 20);
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+button.addEventListener('click', () =>{
+  number.textContent = numberHere.value;
+  if(random <= 4){
+
+  }
+}
+)
+
+let theRandomNumber = Math.floor(Math.random() * 20) + 1;
+
+
