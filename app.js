@@ -2,22 +2,24 @@ const result = document.getElementById('result');
 const button = document.getElementById('guess');
 const number = document.getElementById('number');
 
-let numGuess = 10
-let result;
+let guessNum = 10
 let theRandomNumber = Math.floor(Math.random() * 20) + 1;
 
-button.addEventListener('click', () =>{
+button.addEventListener('click', () => {
   guessNum--;
+  console.log(guessNum);
+  let userGuess = Number(number.value);
+  console.log(userGuess);
 
-  if (userGuess === randomNum) {
+  if (userGuess === theRandomNumber) {
     result = 'You are correct!';
   } else
 
-  if (userGuess > randNum) {
+  if (userGuess > theRandomNumber) {
     result = 'You are too high!'
   } else
 
-  if (userGuess === randomNum) {
+  if (userGuess === theRandomNumber) {
     result = 'You are too low!'
   } else
 
@@ -25,26 +27,9 @@ button.addEventListener('click', () =>{
 
 });
 
+reset.addEventListener('click', () => {
+  guessNum = 10;
 
-let theRandomNumber = Math.floor(Math.random() * 20) + 1;
-
-
-
-
-
-
-
-
-
-
-let randomNum = (1 * 20);
-
-button.addEventListener('click', () =>{
-  number.textContent = numberHere.value;
-  if(random <= 4){
-
-  }
 }
 )
 
-let theRandomNumber = Math.floor(Math.random() * 20) + 1;
