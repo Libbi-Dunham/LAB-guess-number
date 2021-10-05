@@ -9,3 +9,17 @@ h1 {
     font-family: 'Shadows Into Light', cursive;
 }
 
+#reset {
+    font-size: 100%;
+
+}
+
+button {
+    background-color: #5EB1BF;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#number {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+}
