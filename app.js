@@ -5,7 +5,6 @@ const resetButton = document.getElementById('reset');
 console.log(resetButton);
 const remainingGuessElement = document.getElementById('remaining-text');
 
-
 let remainingGuess = 4;
 let theRandomNumber = Math.floor(Math.random() * 20) + 1;
 
@@ -27,14 +26,13 @@ button.addEventListener('click', () => {
     if (userGuess < theRandomNumber) {
         result.textContent = 'You are too low!';
     }
+    
+    if (remainingGuess === 0){
+        button.style.display = 'none';
+    }
 
-  // console.log(guessNum);
-
-    // result.textContent = `You are ${guess}.`;
     number.textContent = number;
-
     remainingGuessElement.textContent = remainingGuess;
-
 });
 
 resetButton.addEventListener('click', () => {
@@ -43,10 +41,7 @@ resetButton.addEventListener('click', () => {
     remainingGuessElement.textContent = remainingGuess;
     number.value = 'Number Here';
     result.textContent = '';
-    
+    button.style.display = '';
     theRandomNumber = Math.floor(Math.random() * 20) + 1;
-
-
-}
-);
+});
 
