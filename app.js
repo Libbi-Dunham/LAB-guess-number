@@ -23,7 +23,7 @@ button.addEventListener('click', () => {
         result.textContent = 'You are correct!';
         correct++;
         console.log(correct);
-        correct1.textContent = `The amount of times correct: ${correct}`
+        correct1.textContent = `The amount of times correct: ${correct}`;
     } else
 
     if (userGuess > theRandomNumber) {
@@ -38,7 +38,7 @@ button.addEventListener('click', () => {
         button.style.display = 'none';
         failed++;
         console.log(failed);
-        failed1.textContent = `The amount of times failed: ${failed}`
+        failed1.textContent = `The amount of times failed: ${failed}`;
     }
 
     number.textContent = number;
