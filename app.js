@@ -4,9 +4,13 @@ const number = document.getElementById('number');
 const resetButton = document.getElementById('reset');
 console.log(resetButton);
 const remainingGuessElement = document.getElementById('remaining-text');
-
+const correct1 = document.getElementById('correct-amount');
+const failed1 = document.getElementById('failed-amount');
 let remainingGuess = 4;
 let theRandomNumber = Math.floor(Math.random() * 20) + 1;
+let correct = 0;
+let failed = 0;
+console.log(theRandomNumber);
 
 button.addEventListener('click', () => {
     console.log('remainging guesses', remainingGuess);
@@ -17,6 +21,9 @@ button.addEventListener('click', () => {
 
     if (userGuess === theRandomNumber) {
         result.textContent = 'You are correct!';
+        correct++;
+        console.log(correct);
+        correct1.textContent = `The amount of times correct: ${correct}`
     } else
 
     if (userGuess > theRandomNumber) {
@@ -29,6 +36,9 @@ button.addEventListener('click', () => {
     
     if (remainingGuess === 0){
         button.style.display = 'none';
+        failed++;
+        console.log(failed);
+        failed1.textContent = `The amount of times failed: ${failed}`
     }
 
     number.textContent = number;
