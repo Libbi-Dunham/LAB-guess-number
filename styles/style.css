@@ -2,7 +2,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #A09BE7;
+    background-image: url("http://earnthis.net/wp-content/uploads/2015/02/numbers.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 h1 {
@@ -22,4 +24,15 @@ button {
 #number {
     text-align: center;
     font-family: 'Shadows Into Light', cursive;
+    background-color: #5EB1BF;
+}
+
+#correct-amount {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#failed-amount {
+    font-weight: bolder;
+    font-size: 20px;
 }
