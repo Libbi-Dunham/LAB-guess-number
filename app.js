@@ -3,7 +3,7 @@ const button = document.getElementById('guess');
 const number = document.getElementById('number');
 const resetButton = document.getElementById('reset');
 console.log(resetButton);
-const remainingGuessElement = document.getElementById('remaining-text');
+let remainingGuessElement = document.getElementById('remaining-text');
 const correct1 = document.getElementById('correct-amount');
 const failed1 = document.getElementById('failed-amount');
 let remainingGuess = 4;
@@ -19,7 +19,10 @@ button.addEventListener('click', () => {
     let userGuess = Number(number.value);
     console.log(userGuess);
 
+
     if (userGuess === theRandomNumber) {
+        remainingGuessElement.innerhtml = `remaining guess: ${remainingGuess}`;
+
         result.textContent = 'You are correct!';
         correct++;
         console.log(correct);
@@ -27,14 +30,30 @@ button.addEventListener('click', () => {
     } else
 
     if (userGuess > theRandomNumber) {
+        remainingGuessElement.innerhtml = `${remainingGuess}`;
+
         result.textContent = 'You are too high!';
     } else
 
     if (userGuess < theRandomNumber) {
+        remainingGuessElement.innerhtml = `${remainingGuess}`;
+
         result.textContent = 'You are too low!';
     }
     
-    if (remainingGuess === 0){
+    if (($(remainingGuess === 0)) && ($(userGuess === theRandomNumber)));
+    {
+        remainingGuessElement.innerhtml = `${remainingGuess}`;
+
+        result.textContent = 'You are correct!';
+        correct++;
+        console.log(correct);
+        correct1.textContent = `The amount of times correct: ${correct}`;
+    }
+
+    if (remainingGuess === 0) {
+        remainingGuessElement.innerhtml = `${remainingGuess}`;
+
         button.style.display = 'none';
         failed++;
         console.log(failed);
