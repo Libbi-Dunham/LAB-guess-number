@@ -15,10 +15,9 @@ console.log(theRandomNumber);
 button.addEventListener('click', () => {
     console.log('remainging guesses', remainingGuess);
     remainingGuess--;
-
+    
     let userGuess = Number(number.value);
     console.log(userGuess);
-
 
     if (userGuess === theRandomNumber) {
         remainingGuessElement.innerhtml = `remaining guess: ${remainingGuess}`;
@@ -27,45 +26,32 @@ button.addEventListener('click', () => {
         correct++;
         console.log(correct);
         correct1.textContent = `The amount of times correct: ${correct}`;
-    } else
-
-    if (userGuess > theRandomNumber) {
+    } else if (remainingGuess === 0) {
         remainingGuessElement.innerhtml = `${remainingGuess}`;
-
-        result.textContent = 'You are too high!';
-    } else
-
-    if (userGuess < theRandomNumber) {
-        remainingGuessElement.innerhtml = `${remainingGuess}`;
-
-        result.textContent = 'You are too low!';
-    }
-    
-    if (($(remainingGuess === 0)) && ($(userGuess === theRandomNumber)));
-    {
-        remainingGuessElement.innerhtml = `${remainingGuess}`;
-
-        result.textContent = 'You are correct!';
-        correct++;
-        console.log(correct);
-        correct1.textContent = `The amount of times correct: ${correct}`;
-    }
-
-    if (remainingGuess === 0) {
-        remainingGuessElement.innerhtml = `${remainingGuess}`;
+        result.textContent = `you are out of guesses`;
+        button.disabled = true;
 
         button.style.display = 'none';
         failed++;
         console.log(failed);
         failed1.textContent = `The amount of times failed: ${failed}`;
-    }
+    } else if (userGuess > theRandomNumber) {
+        remainingGuessElement.innerhtml = `${remainingGuess}`;
 
+        result.textContent = 'You are too high!';
+    } else {
+        remainingGuessElement.innerhtml = `${remainingGuess}`;
+
+        result.textContent = 'You are too low!';
+    
+    } 
     number.textContent = number;
     remainingGuessElement.textContent = remainingGuess;
 });
 
 resetButton.addEventListener('click', () => {
     remainingGuess = 4;
+    button.disabled = false;
     console.log(remainingGuess);
     remainingGuessElement.textContent = remainingGuess;
     number.value = 'Number Here';
